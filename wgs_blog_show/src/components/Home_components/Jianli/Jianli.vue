@@ -20,7 +20,7 @@
       <p class="Jianli-title">{{ i.title }}</p>
       <div>
         <!-- 工作经历 -->
-        <div class="strongtext" v-for="works in i.works" :key="works">
+        <div class="strongtext" v-for="(works, index) in i.works" :key="index">
           {{ works.gongsi }}
           <span class="time">{{ works.time }}</span>
           <div>
@@ -33,20 +33,24 @@
           </ul>
         </div>
         <ul>
-          <li v-for="content in i.content" :key="content">
-            {{ content }}
+          <li v-for="(items, index) in i.content" :key="index">
+            {{ items }}
           </li>
         </ul>
         <!-- 项目经历 -->
-        <div class="strongtext" v-for="project in i.project" :key="project">
+        <div
+          class="strongtext"
+          v-for="(project, index) in i.project"
+          :key="index"
+        >
           <p>
             {{ project.title }} <span class="time">{{ project.time }}</span>
           </p>
           <p>{{ project.job }}</p>
           内容：
           <ul class="texthui">
-            <li v-for="content in project.content" :key="content">
-              {{ content }}
+            <li v-for="(i, index) in project.content" :key="index">
+              {{ i }}
             </li>
           </ul>
         </div>
@@ -62,15 +66,33 @@
   </article>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { reactive } from "vue";
-// interface List [
-//     {
-//         title: string;
-//         //   year?: number
-
-//     }
-// ]
+// interface List {
+//   [index: number]: Object;
+// }
+// type headType = [
+//   {
+//     title: string;
+//     content: Array<any>;
+//     works: Array<{
+//       gongsi: string;
+//       time: string;
+//       suoshu: string;
+//       job: string;
+//       content: Array<string>;
+//     }>;
+//     project: Array<{
+//       title: string;
+//       time: string;
+//       job: string;
+//       content: Array<string>;
+//     }>;
+//     school: string;
+//     time: string;
+//     zhuanye: string;
+//   }
+// ];
 const list = reactive([
   {
     title: "个人技能",

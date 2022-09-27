@@ -1,4 +1,29 @@
-$bg-color:rgb(120, 219, 111);
-.toux {
-    background-color: $bg-color;
+$padding: 10px 20px;
+$color-hui: #9fa3b0;
+$color-texthui: #61687c;
+$color-strongtext: #414a60;
+section {
+    padding: $padding;
+    .Jianli-title {
+        border-left: 5px solid rgb(0, 173, 0);
+        padding-left: 5px;
+        color: $color-strongtext;
+    }
+    .time {
+        display: inline-block;
+        transform: scale(0.7);
+        color: $color-hui;
+        font-weight: 400;
+    }
+    .texthui {
+        color: $color-texthui;
+        font-weight: 400;
+    }
+    .strongtext {
+        color: $color-strongtext;
+        font-weight: bold;
+    }
+}
+.touxiang {
+    margin-left: auto;
 }

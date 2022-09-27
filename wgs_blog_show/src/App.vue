@@ -33,30 +33,32 @@ const handleSelect = (key: string, keyPath: string[]) => {
       :ellipsis="false"
       @select="handleSelect"
     >
-      <el-menu-item index="0">关于</el-menu-item>
+      <el-menu-item class="margin-left20" index="0">关于</el-menu-item>
       <div class="flex-grow" />
       <el-menu-item index="1">blog</el-menu-item>
-      <el-menu-item index="2">登录</el-menu-item>
+      <el-menu-item class="margin-right20" index="2">登录</el-menu-item>
     </el-menu>
   </nav>
-  <!-- <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header> -->
-
-  <RouterView />
+  <article>
+    <RouterView />
+  </article>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.el-menu--horizontal {
+  .el-menu-item:first-child {
+    margin-left: 20%;
+  }
+  .el-menu-item:last-child {
+    margin-right: 20%;
+  }
+}
 .flex-grow {
   flex-grow: 1;
+}
+article {
+  margin: 20px 20%;
+  box-shadow: 0 0 2px #b5b5b5;
 }
 </style>

@@ -75,4 +75,18 @@ body {
 body {
   margin: 0;
   padding: 0;
+  $margin-left20: 20%;
+  $margin-right20: 20%;
+  $box-shadow: 10px 10px;
+  .margin-left20 {
+    margin-left: $margin-left20;
+  }
+  .margin-right20 {
+    margin-right: $margin-right20;
+  }
+}
+
+._flex {
+  display: flex;
+  align-items: center;
 }

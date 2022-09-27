@@ -66,7 +66,7 @@
   </article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive } from "vue";
 // interface List {
 //   [index: number]: Object;
